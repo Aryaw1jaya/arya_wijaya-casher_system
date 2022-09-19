@@ -3,7 +3,7 @@ START
 DECLARE "barang" with ARRAY;
 DECLARE "jumlah", "total", "j" with NUMBER;
 DECLARE "status" with BOOLEAN
-SET status with TRUE
+SET "status" with TRUE
 
 FUNCTION HitungBarang()
     STORE "barang" with ARRAY
@@ -17,7 +17,7 @@ WHILE ("status" = TRUE)
     STORE "barang" with [{id: 1, name: "Sari Roti Keju", harga: 11000}]
     STORE "jumlah" with 2
 
-    CALL HitungBarang(barang, jumlah)
+    CALL HitungBarang("barang", "jumlah")
     PRINT "total"
 
     WRITE("Apakah masih ada barang lagi?")
