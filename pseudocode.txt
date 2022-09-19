@@ -1,0 +1,33 @@
+START
+
+DECLARE "barang" with ARRAY;
+DECLARE "jumlah", "total", "j" with NUMBER;
+DECLARE "status" with BOOLEAN
+SET "status" with TRUE
+
+FUNCTION HitungBarang()
+    STORE "barang" with ARRAY
+    STORE "jumlah" with NUMBER
+    READ "j" = harga x jumlah
+    READ "total" = j + total
+    RETURN "total"
+END FUNCTION
+
+WHILE ("status" = TRUE)
+    STORE "barang" with [{id: 1, name: "Sari Roti Keju", harga: 11000}]
+    STORE "jumlah" with 2
+
+    CALL HitungBarang("barang", "jumlah")
+    PRINT "total"
+
+    WRITE("Apakah masih ada barang lagi?")
+    SET "status" with TRUE
+    READ "status"
+    IF ("status" = TRUE)
+        SET status = TRUE
+    ELSE
+        PRINT "total"
+    END IF
+END WHILE
+
+END
